@@ -1,0 +1,1527 @@
+<sdf version='1.6'>
+  <model name='NaoH25V40'>
+    <link name='base_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.00413 0 0.04342 0 -0 0</pose>
+        <mass>1.04956</mass>
+        <inertia>
+          <ixx>0.00308361</ixx>
+          <ixy>1.43116e-05</ixy>
+          <ixz>-3.30211e-05</ixz>
+          <iyy>0.0028835</iyy>
+          <iyz>-2.70793e-05</iyz>
+          <izz>0.0015924</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_fixed_joint_lump__torso_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/Torso_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_fixed_joint_lump__torso_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/Torso.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name='Neck'>
+      <pose frame=''>0 0 0.1265 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-1e-05 0 -0.02742 0 -0 0</pose>
+        <mass>0.06442</mass>
+        <inertia>
+          <ixx>2.65584e-05</ixx>
+          <ixy>1.57e-09</ixy>
+          <ixz>0</ixz>
+          <iyy>2.75654e-05</iyy>
+          <iyz>-5.295e-08</iyz>
+          <izz>5.53372e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='Neck_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/HeadYaw_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Neck_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/HeadYaw.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='HeadYaw' type='revolute'>
+      <child>Neck</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.08567</lower>
+          <upper>2.08567</upper>
+          <effort>1.547</effort>
+          <velocity>8.26797</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='Head'>
+      <pose frame=''>0 0 0.1265 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.00112 0 0.05258 0 -0 0</pose>
+        <mass>0.60533</mass>
+        <inertia>
+          <ixx>0.000957766</ixx>
+          <ixy>8.78814e-06</ixy>
+          <ixz>5.33702e-06</ixz>
+          <iyy>0.000816836</iyy>
+          <iyz>-2.99579e-05</iyz>
+          <izz>0.000984976</izz>
+        </inertia>
+      </inertial>
+      <collision name='Head_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/HeadPitch_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Head_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/HeadPitch.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='HeadPitch' type='revolute'>
+      <child>Head</child>
+      <parent>Neck</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.671952</lower>
+          <upper>0.514872</upper>
+          <effort>1.532</effort>
+          <velocity>7.19407</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='LPelvis'>
+      <pose frame=''>0 0.05 -0.085 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.00781 -0.01114 0.02661 0 -0 0</pose>
+        <mass>0.06981</mass>
+        <inertia>
+          <ixx>2.3407e-05</ixx>
+          <ixy>1.07922e-06</ixy>
+          <ixz>-1.76003e-06</ixz>
+          <iyy>4.76355e-05</iyy>
+          <iyz>2.76058e-06</iyz>
+          <izz>4.97021e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='LPelvis_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LHipYawPitch_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='LPelvis_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LHipYawPitch.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LHipYawPitch' type='revolute'>
+      <child>LPelvis</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0.707106 -0.707106</xyz>
+        <limit>
+          <lower>-1.14529</lower>
+          <upper>0.740718</upper>
+          <effort>3.348</effort>
+          <velocity>4.16174</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='LHip'>
+      <pose frame=''>0 0.05 -0.085 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.01549 0.00029 -0.00515 0 -0 0</pose>
+        <mass>0.13053</mass>
+        <inertia>
+          <ixx>2.41106e-05</ixx>
+          <ixy>-6.08684e-07</ixy>
+          <ixz>6.33119e-06</ixz>
+          <iyy>6.34892e-05</iyy>
+          <iyz>-1.99137e-07</iyz>
+          <izz>5.67694e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='LHip_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LHipRoll_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='LHip_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LHipRoll.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LHipRoll' type='revolute'>
+      <child>LHip</child>
+      <parent>LPelvis</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.379435</lower>
+          <upper>0.79046</upper>
+          <effort>3.348</effort>
+          <velocity>4.16174</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='LThigh'>
+      <pose frame=''>0 0.05 -0.085 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.00138 0.00221 -0.05373 0 -0 0</pose>
+        <mass>0.38968</mass>
+        <inertia>
+          <ixx>0.000509844</ixx>
+          <ixy>2.11296e-06</ixy>
+          <ixz>5.64129e-05</ixz>
+          <iyy>0.000465358</iyy>
+          <iyz>-7.91029e-06</iyz>
+          <izz>0.000301098</izz>
+        </inertia>
+      </inertial>
+      <collision name='LThigh_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LHipPitch_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='LThigh_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LHipPitch.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LHipPitch' type='revolute'>
+      <child>LThigh</child>
+      <parent>LHip</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.53589</lower>
+          <upper>0.48398</upper>
+          <effort>3.023</effort>
+          <velocity>6.40239</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='LTibia'>
+      <pose frame=''>0 0.05 -0.185 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.00453 0.00225 -0.04936 0 -0 0</pose>
+        <mass>0.29142</mass>
+        <inertia>
+          <ixx>0.000470586</ixx>
+          <ixy>3.60392e-06</ixy>
+          <ixz>-2.86648e-05</ixz>
+          <iyy>0.000412654</iyy>
+          <iyz>7.13013e-06</iyz>
+          <izz>0.000185772</izz>
+        </inertia>
+      </inertial>
+      <collision name='LTibia_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LKneePitch_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='LTibia_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LKneePitch.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LKneePitch' type='revolute'>
+      <child>LTibia</child>
+      <parent>LThigh</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.0923279</lower>
+          <upper>2.11255</upper>
+          <effort>3.023</effort>
+          <velocity>6.40239</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='LAnklePitch'>
+      <pose frame=''>0 0.05 -0.2879 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.00045 0.00029 0.00685 0 -0 0</pose>
+        <mass>0.13416</mass>
+        <inertia>
+          <ixx>3.22034e-05</ixx>
+          <ixy>-8.83212e-09</ixy>
+          <ixz>4.27549e-06</ixz>
+          <iyy>6.7943e-05</iyy>
+          <iyz>2.84849e-07</iyz>
+          <izz>5.48269e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='LAnklePitch_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LAnklePitch_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='LAnklePitch_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LAnklePitch.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LAnklePitch' type='revolute'>
+      <child>LAnklePitch</child>
+      <parent>LTibia</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.18944</lower>
+          <upper>0.922581</upper>
+          <effort>3.023</effort>
+          <velocity>6.40239</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='l_ankle'>
+      <pose frame=''>0 0.05 -0.2879 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.02542 0.0033 -0.03239 0 -0 0</pose>
+        <mass>0.161842</mass>
+        <inertia>
+          <ixx>9.78925e-05</ixx>
+          <ixy>7.88035e-06</ixy>
+          <ixz>6.12776e-06</ixz>
+          <iyy>0.000369978</iyy>
+          <iyz>1.44225e-06</iyz>
+          <izz>0.000419418</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_ankle_fixed_joint_lump__l_sole_collision'>
+        <pose frame=''>0.02 0.005 -0.04511 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.14 0.078 0.007</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='l_ankle_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LAnkleRoll.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='l_ankle_fixed_joint_lump__l_sole_visual_1'>
+        <pose frame=''>0.02 0.005 -0.04511 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.14 0.078 0.007</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LAnkleRoll' type='revolute'>
+      <child>l_ankle</child>
+      <parent>LAnklePitch</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.397761</lower>
+          <upper>0.768992</upper>
+          <effort>3.348</effort>
+          <velocity>4.16174</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='LShoulder'>
+      <pose frame=''>0 0.098 0.1 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.00165 -0.02663 0.00014 0 -0 0</pose>
+        <mass>0.07504</mass>
+        <inertia>
+          <ixx>3.10677e-05</ixx>
+          <ixy>1.2692e-06</ixy>
+          <ixz>6.04576e-09</ixz>
+          <iyy>1.39498e-05</iyy>
+          <iyz>-2.99484e-07</iyz>
+          <izz>3.30001e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='LShoulder_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LShoulderPitch_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='LShoulder_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LShoulderPitch.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LShoulderPitch' type='revolute'>
+      <child>LShoulder</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-2.08567</lower>
+          <upper>2.08567</upper>
+          <effort>1.329</effort>
+          <velocity>8.26797</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='LBicep'>
+      <pose frame=''>0 0.098 0.1 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.02455 0.00563 0.0033 0 -0 0</pose>
+        <mass>0.15777</mass>
+        <inertia>
+          <ixx>8.7181e-05</ixx>
+          <ixy>-2.53381e-05</ixy>
+          <ixz>-1.4213e-05</ixz>
+          <iyy>0.000274712</iyy>
+          <iyz>4.71439e-07</iyz>
+          <izz>0.000241812</izz>
+        </inertia>
+      </inertial>
+      <collision name='LBicep_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LShoulderRoll_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='LBicep_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LShoulderRoll.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LShoulderRoll' type='revolute'>
+      <child>LBicep</child>
+      <parent>LShoulder</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.314159</lower>
+          <upper>1.32645</upper>
+          <effort>1.7835</effort>
+          <velocity>7.19407</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='LElbow'>
+      <pose frame=''>0.105 0.113 0.1 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.02744 0 -0.00014 0 -0 0</pose>
+        <mass>0.06483</mass>
+        <inertia>
+          <ixx>5.59588e-06</ixx>
+          <ixy>4.21e-09</ixy>
+          <ixz>2.92241e-07</ixz>
+          <iyy>2.66179e-05</iyy>
+          <iyz>-1.84e-09</iyz>
+          <izz>2.76294e-05</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name='LElbowYaw' type='revolute'>
+      <child>LElbow</child>
+      <parent>LBicep</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.08567</lower>
+          <upper>2.08567</upper>
+          <effort>1.547</effort>
+          <velocity>8.26797</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='LForeArm'>
+      <pose frame=''>0.105 0.113 0.1 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.02556 0.00281 0.00076 0 -0 0</pose>
+        <mass>0.07761</mass>
+        <inertia>
+          <ixx>2.46746e-05</ixx>
+          <ixy>3.23152e-06</ixy>
+          <ixz>1.58221e-06</ixz>
+          <iyy>3.83837e-05</iyy>
+          <iyz>1.39194e-07</iyz>
+          <izz>3.59708e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='LForeArm_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LElbowRoll_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='LForeArm_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LElbowRoll.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LElbowRoll' type='revolute'>
+      <child>LForeArm</child>
+      <parent>LElbow</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.54462</lower>
+          <upper>-0.0349066</upper>
+          <effort>1.532</effort>
+          <velocity>7.19407</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='l_wrist'>
+      <pose frame=''>0.16095 0.113 0.1 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.034343 -0.00088 0.003078 0 -0 0</pose>
+        <mass>0.185348</mass>
+        <inertia>
+          <ixx>6.86692e-05</ixx>
+          <ixy>1.14947e-07</ixy>
+          <ixz>-2.86079e-06</ixz>
+          <iyy>0.000135796</iyy>
+          <iyz>2.67572e-06</iyz>
+          <izz>0.000133261</izz>
+        </inertia>
+      </inertial>
+      <collision name='l_wrist_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LWristYaw_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='l_wrist_fixed_joint_lump__LFinger11_link_collision_1'>
+        <pose frame=''>0.06907 0.01157 -0.00304 1.8862 0.976662 0.264067</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LFinger11_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='l_wrist_fixed_joint_lump__LFinger12_link_collision_2'>
+        <pose frame=''>0.07683 0.013668 -0.014939 -1.97173 1.1097 2.77877</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LFinger12_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='l_wrist_fixed_joint_lump__LFinger13_link_collision_3'>
+        <pose frame=''>0.070857 0.015936 -0.0278 -1.74706 0.139726 3.11679</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LFinger13_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='l_wrist_fixed_joint_lump__LFinger21_link_collision_4'>
+        <pose frame=''>0.06907 -0.01157 -0.00304 1.25539 0.976662 -0.264067</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LFinger21_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='l_wrist_fixed_joint_lump__LFinger22_link_collision_5'>
+        <pose frame=''>0.07683 -0.013668 -0.014939 -1.16986 1.1097 -2.77877</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LFinger22_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='l_wrist_fixed_joint_lump__LFinger23_link_collision_6'>
+        <pose frame=''>0.070857 -0.015936 -0.0278 -1.39453 0.139725 -3.11679</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LFinger23_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='l_wrist_fixed_joint_lump__LThumb1_link_collision_7'>
+        <pose frame=''>0.04895 0 -0.02638 -1.5708 0.047298 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LThumb1_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='l_wrist_fixed_joint_lump__LThumb2_link_collision_8'>
+        <pose frame=''>0.063294 -0 -0.027059 -1.5708 -0.952601 5e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LThumb2_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='l_wrist_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LWristYaw.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='l_wrist_fixed_joint_lump__LFinger11_link_visual_1'>
+        <pose frame=''>0.06907 0.01157 -0.00304 1.8862 0.976662 0.264067</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LFinger11.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='l_wrist_fixed_joint_lump__LFinger12_link_visual_2'>
+        <pose frame=''>0.07683 0.013668 -0.014939 -1.97173 1.1097 2.77877</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LFinger12.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='l_wrist_fixed_joint_lump__LFinger13_link_visual_3'>
+        <pose frame=''>0.070857 0.015936 -0.0278 -1.74706 0.139726 3.11679</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LFinger13.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='l_wrist_fixed_joint_lump__LFinger21_link_visual_4'>
+        <pose frame=''>0.06907 -0.01157 -0.00304 1.25539 0.976662 -0.264067</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LFinger21.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='l_wrist_fixed_joint_lump__LFinger22_link_visual_5'>
+        <pose frame=''>0.07683 -0.013668 -0.014939 -1.16986 1.1097 -2.77877</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LFinger22.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='l_wrist_fixed_joint_lump__LFinger23_link_visual_6'>
+        <pose frame=''>0.070857 -0.015936 -0.0278 -1.39453 0.139725 -3.11679</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LFinger23.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='l_wrist_fixed_joint_lump__LThumb1_link_visual_7'>
+        <pose frame=''>0.04895 0 -0.02638 -1.5708 0.047298 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LThumb1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='l_wrist_fixed_joint_lump__LThumb2_link_visual_8'>
+        <pose frame=''>0.063294 -0 -0.027059 -1.5708 -0.952601 5e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/LThumb2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LWristYaw' type='revolute'>
+      <child>l_wrist</child>
+      <parent>LForeArm</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.82387</lower>
+          <upper>1.82387</upper>
+          <effort>0.4075</effort>
+          <velocity>24.6229</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='RPelvis'>
+      <pose frame=''>0 -0.05 -0.085 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.00781 0.01114 0.02661 0 -0 0</pose>
+        <mass>0.06981</mass>
+        <inertia>
+          <ixx>3.18766e-05</ixx>
+          <ixy>-1.07152e-06</ixy>
+          <ixz>-1.77295e-06</ixz>
+          <iyy>5.18361e-05</iyy>
+          <iyz>-7.00664e-06</iyz>
+          <izz>5.39657e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='RPelvis_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RHipYawPitch_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='RPelvis_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RHipYawPitch.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RHipYawPitch' type='revolute'>
+      <child>RPelvis</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0.707106 0.707106</xyz>
+        <limit>
+          <lower>-1.14529</lower>
+          <upper>0.740718</upper>
+          <effort>3.348</effort>
+          <velocity>4.16174</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='RHip'>
+      <pose frame=''>0 -0.05 -0.085 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.01549 -0.00029 -0.00515 0 -0 0</pose>
+        <mass>0.13053</mass>
+        <inertia>
+          <ixx>2.41136e-05</ixx>
+          <ixy>5.67164e-07</ixy>
+          <ixz>6.30461e-06</ixz>
+          <iyy>6.34886e-05</iyy>
+          <iyz>1.97457e-07</iyz>
+          <izz>5.6773e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='RHip_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RHipRoll_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='RHip_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RHipRoll.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RHipRoll' type='revolute'>
+      <child>RHip</child>
+      <parent>RPelvis</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.79046</lower>
+          <upper>0.379435</upper>
+          <effort>3.348</effort>
+          <velocity>4.16174</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='RThigh'>
+      <pose frame=''>0 -0.05 -0.085 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.00138 -0.00221 -0.05373 0 -0 0</pose>
+        <mass>0.38968</mass>
+        <inertia>
+          <ixx>0.000510607</ixx>
+          <ixy>-2.02799e-06</ixy>
+          <ixz>5.69893e-05</ixz>
+          <iyy>0.0004665</iyy>
+          <iyz>7.09563e-06</iyz>
+          <izz>0.000301333</izz>
+        </inertia>
+      </inertial>
+      <collision name='RThigh_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RHipPitch_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='RThigh_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RHipPitch.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RHipPitch' type='revolute'>
+      <child>RThigh</child>
+      <parent>RHip</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.53589</lower>
+          <upper>0.48398</upper>
+          <effort>3.0226</effort>
+          <velocity>6.40239</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='RTibia'>
+      <pose frame=''>0 -0.05 -0.185 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.00453 -0.00225 -0.04936 0 -0 0</pose>
+        <mass>0.29142</mass>
+        <inertia>
+          <ixx>0.000471336</ixx>
+          <ixy>-3.8668e-06</ixy>
+          <ixz>-3.71648e-05</ixz>
+          <iyy>0.00041228</iyy>
+          <iyz>-6.11093e-06</iyz>
+          <izz>0.000183997</izz>
+        </inertia>
+      </inertial>
+      <collision name='RTibia_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RKneePitch_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='RTibia_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RKneePitch.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RKneePitch' type='revolute'>
+      <child>RTibia</child>
+      <parent>RThigh</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.0923279</lower>
+          <upper>2.11255</upper>
+          <effort>3.0226</effort>
+          <velocity>6.40239</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='RAnklePitch'>
+      <pose frame=''>0 -0.05 -0.2879 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.00045 -0.00029 0.00685 0 -0 0</pose>
+        <mass>0.13416</mass>
+        <inertia>
+          <ixx>3.22017e-05</ixx>
+          <ixy>4.68321e-08</ixy>
+          <ixz>4.28821e-06</ixz>
+          <iyy>6.79885e-05</iyy>
+          <iyz>-2.71089e-07</iyz>
+          <izz>5.48747e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='RAnklePitch_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RAnklePitch_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='RAnklePitch_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RAnklePitch.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RAnklePitch' type='revolute'>
+      <child>RAnklePitch</child>
+      <parent>RTibia</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.1863</lower>
+          <upper>0.932006</upper>
+          <effort>3.0226</effort>
+          <velocity>6.40239</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='r_ankle'>
+      <pose frame=''>0 -0.05 -0.2879 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.02542 -0.0033 -0.03239 0 -0 0</pose>
+        <mass>0.161842</mass>
+        <inertia>
+          <ixx>9.77527e-05</ixx>
+          <ixy>-7.70102e-06</ixy>
+          <ixz>5.88155e-06</ixz>
+          <iyy>0.000369109</iyy>
+          <iyz>-1.5505e-06</iyz>
+          <izz>0.000418696</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_ankle_fixed_joint_lump__r_sole_collision'>
+        <pose frame=''>0.02 -0.005 -0.04511 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.14 0.078 0.007</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='r_ankle_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RAnkleRoll.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='r_ankle_fixed_joint_lump__r_sole_visual_1'>
+        <pose frame=''>0.02 -0.005 -0.04511 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.14 0.078 0.007</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RAnkleRoll' type='revolute'>
+      <child>r_ankle</child>
+      <parent>RAnklePitch</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.768992</lower>
+          <upper>0.397761</upper>
+          <effort>3.348</effort>
+          <velocity>4.16174</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='RShoulder'>
+      <pose frame=''>0 -0.098 0.1 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.00165 0.02663 0.00014 0 -0 0</pose>
+        <mass>0.07504</mass>
+        <inertia>
+          <ixx>3.10677e-05</ixx>
+          <ixy>-1.2692e-06</ixy>
+          <ixz>6.04576e-09</ixz>
+          <iyy>1.39498e-05</iyy>
+          <iyz>2.99484e-07</iyz>
+          <izz>3.30001e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='RShoulder_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RShoulderPitch_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='RShoulder_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RShoulderPitch.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RShoulderPitch' type='revolute'>
+      <child>RShoulder</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-2.08567</lower>
+          <upper>2.08567</upper>
+          <effort>1.329</effort>
+          <velocity>8.26797</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='RBicep'>
+      <pose frame=''>0 -0.098 0.1 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.02455 -0.00563 0.0033 0 -0 0</pose>
+        <mass>0.15777</mass>
+        <inertia>
+          <ixx>0.000103401</ixx>
+          <ixy>5.48849e-05</ixy>
+          <ixz>-1.32643e-05</ixz>
+          <iyy>0.00027077</iyy>
+          <iyz>9.16707e-06</iyz>
+          <izz>0.000254529</izz>
+        </inertia>
+      </inertial>
+      <collision name='RBicep_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RShoulderRoll_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='RBicep_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RShoulderRoll.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RShoulderRoll' type='revolute'>
+      <child>RBicep</child>
+      <parent>RShoulder</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.32645</lower>
+          <upper>0.314159</upper>
+          <effort>1.783</effort>
+          <velocity>7.19407</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='RElbow'>
+      <pose frame=''>0.105 -0.113 0.1 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.02744 0 -0.00014 0 -0 0</pose>
+        <mass>0.06483</mass>
+        <inertia>
+          <ixx>5.59588e-06</ixx>
+          <ixy>4.21e-09</ixy>
+          <ixz>2.92241e-07</ixz>
+          <iyy>2.66179e-05</iyy>
+          <iyz>-1.84e-09</iyz>
+          <izz>2.76294e-05</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name='RElbowYaw' type='revolute'>
+      <child>RElbow</child>
+      <parent>RBicep</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.08567</lower>
+          <upper>2.08567</upper>
+          <effort>1.547</effort>
+          <velocity>8.26797</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='RForeArm'>
+      <pose frame=''>0.105 -0.113 0.1 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.02556 -0.00281 0.00076 0 -0 0</pose>
+        <mass>0.07761</mass>
+        <inertia>
+          <ixx>2.47331e-05</ixx>
+          <ixy>-3.2418e-06</ixy>
+          <ixz>9.06451e-07</ixz>
+          <iyy>3.84719e-05</iyy>
+          <iyz>-1.38804e-07</iyz>
+          <izz>3.59319e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='RForeArm_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RElbowRoll_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='RForeArm_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RElbowRoll.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RElbowRoll' type='revolute'>
+      <child>RForeArm</child>
+      <parent>RElbow</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0.0349066</lower>
+          <upper>1.54462</upper>
+          <effort>1.532</effort>
+          <velocity>7.19407</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='r_wrist'>
+      <pose frame=''>0.16095 -0.113 0.1 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.034343 0.00088 0.003078 0 -0 0</pose>
+        <mass>0.185348</mass>
+        <inertia>
+          <ixx>6.86692e-05</ixx>
+          <ixy>1.1317e-05</ixy>
+          <ixz>-2.8608e-06</ixz>
+          <iyy>0.000135796</iyy>
+          <iyz>3.6797e-06</iyz>
+          <izz>0.000133261</izz>
+        </inertia>
+      </inertial>
+      <collision name='r_wrist_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RWristYaw_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='r_wrist_fixed_joint_lump__RFinger11_link_collision_1'>
+        <pose frame=''>0.06907 0.01157 -0.00304 1.8862 0.976662 0.264067</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RFinger11_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='r_wrist_fixed_joint_lump__RFinger12_link_collision_2'>
+        <pose frame=''>0.07683 0.013668 -0.014939 -1.97173 1.1097 2.77877</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RFinger12_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='r_wrist_fixed_joint_lump__RFinger13_link_collision_3'>
+        <pose frame=''>0.070857 0.015936 -0.0278 -1.74706 0.139726 3.11679</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RFinger13_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='r_wrist_fixed_joint_lump__RFinger21_link_collision_4'>
+        <pose frame=''>0.06907 -0.01157 -0.00304 1.25539 0.976662 -0.264067</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RFinger21_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='r_wrist_fixed_joint_lump__RFinger22_link_collision_5'>
+        <pose frame=''>0.07683 -0.013668 -0.014939 -1.16986 1.1097 -2.77877</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RFinger22_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='r_wrist_fixed_joint_lump__RFinger23_link_collision_6'>
+        <pose frame=''>0.070857 -0.015936 -0.0278 -1.39453 0.139725 -3.11679</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RFinger23_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='r_wrist_fixed_joint_lump__RThumb1_link_collision_7'>
+        <pose frame=''>0.04895 0 -0.02638 -1.5708 0.047298 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RThumb1_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='r_wrist_fixed_joint_lump__RThumb2_link_collision_8'>
+        <pose frame=''>0.063294 -0 -0.027059 -1.5708 -0.952601 5e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RThumb2_0.10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='r_wrist_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RWristYaw.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='r_wrist_fixed_joint_lump__RFinger11_link_visual_1'>
+        <pose frame=''>0.06907 0.01157 -0.00304 1.8862 0.976662 0.264067</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RFinger11.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='r_wrist_fixed_joint_lump__RFinger12_link_visual_2'>
+        <pose frame=''>0.07683 0.013668 -0.014939 -1.97173 1.1097 2.77877</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RFinger12.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='r_wrist_fixed_joint_lump__RFinger13_link_visual_3'>
+        <pose frame=''>0.070857 0.015936 -0.0278 -1.74706 0.139726 3.11679</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RFinger13.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='r_wrist_fixed_joint_lump__RFinger21_link_visual_4'>
+        <pose frame=''>0.06907 -0.01157 -0.00304 1.25539 0.976662 -0.264067</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RFinger21.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='r_wrist_fixed_joint_lump__RFinger22_link_visual_5'>
+        <pose frame=''>0.07683 -0.013668 -0.014939 -1.16986 1.1097 -2.77877</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RFinger22.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='r_wrist_fixed_joint_lump__RFinger23_link_visual_6'>
+        <pose frame=''>0.070857 -0.015936 -0.0278 -1.39453 0.139725 -3.11679</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RFinger23.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='r_wrist_fixed_joint_lump__RThumb1_link_visual_7'>
+        <pose frame=''>0.04895 0 -0.02638 -1.5708 0.047298 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RThumb1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='r_wrist_fixed_joint_lump__RThumb2_link_visual_8'>
+        <pose frame=''>0.063294 -0 -0.027059 -1.5708 -0.952601 5e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>nao_meshes/RThumb2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RWristYaw' type='revolute'>
+      <child>r_wrist</child>
+      <parent>RForeArm</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.82387</lower>
+          <upper>1.82387</upper>
+          <effort>0.4075</effort>
+          <velocity>24.6229</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+  </model>
+</sdf>
